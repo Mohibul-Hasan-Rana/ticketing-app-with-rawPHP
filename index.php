@@ -15,7 +15,7 @@
     $db = $database->getConnection();
     //$database->createTables();
 
-    //$rateLimit = new RateLimit($db);
+    $rateLimit = new RateLimit($db);
 
     $request_method = $_SERVER['REQUEST_METHOD'];
     $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -47,10 +47,10 @@
                 $controller = new UserController($db);
                 break;
             case 'departments':
-                //$controller = new DepartmentController($db);
+                $controller = new DepartmentController($db);
                 break;
             case 'tickets':
-                //$controller = new TicketController($db);
+                $controller = new TicketController($db);
                 break;
             case 'auth':
                 $controller = new UserController($db);
@@ -75,7 +75,7 @@
             case 'GET':
                 if ($resource_id) {
                     if ($action) {
-                        //$controller->handleAction($resource_id, $action);
+                        $controller->handleAction($resource_id, $action);
                     } else {
                         $controller->show($resource_id);
                     }
@@ -85,7 +85,7 @@
                 break;
             case 'POST':
                 if ($action) {
-                    //$controller->handleAction($resource_id, $action);
+                    $controller->handleAction($resource_id, $action);
                 } else {
                     $controller->create();
                 }
