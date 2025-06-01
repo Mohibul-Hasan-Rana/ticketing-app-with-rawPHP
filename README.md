@@ -49,3 +49,25 @@ private $host = 'localhost';
 private $db_name = 'ticketing_system';
 private $username = 'your_username';
 private $password = 'your_password';
+```
+
+## Project Structure
+```
+├── controllers/
+│   ├── UserController.php    # User operations
+│   ├── DepartmentController.php
+│   └── TicketController.php
+├── models/
+│   ├── User.php             
+│   ├── Department.php
+│   └── Ticket.php
+├── middleware/
+│   ├── Auth.php             # Authentication middleware
+│   └── RateLimit.php        # Rate limiting
+├── helpers/
+│   └── Response.php         # API response helper
+|   └── Database.php          # Database configuration
+├── .htaccess               # URL rewriting
+├── index.php               # Main entry point
+└── README.md               # How to setup and API endpoints
+```
