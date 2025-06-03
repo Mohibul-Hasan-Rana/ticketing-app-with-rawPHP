@@ -13,7 +13,7 @@
     
     $database = new Database();
     $db = $database->getConnection();
-    //$database->createTables();
+    $database->createTables();
 
     $rateLimit = new RateLimit($db);
 
