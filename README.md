@@ -43,7 +43,7 @@ POST   /tickets/{id}/assign  - Assign agent to ticket
 Create a MySQL database named `ticketing_system`. The tables will be created automatically when you first run the application.
 
 ### 2. Configuration
-Update the database credentials in `config/database.php`:
+Update the database credentials in `helpers/Database.php`:
 ```php
 private $host = 'localhost';
 private $db_name = 'ticketing_system';
