@@ -4,6 +4,7 @@ class RateLimit {
 
     public function __construct($db) {
         $this->db = $db;
+		date_default_timezone_set('Asia/Dhaka');
     }
 
     public function check($ip, $endpoint, $limit, $window_seconds) {
@@ -31,8 +32,8 @@ class RateLimit {
 
     private function cleanup($window_seconds) {
         $cutoff = date('Y-m-d H:i:s', time() - $window_seconds);
-        $query = "DELETE FROM rate_limits WHERE window_start < ?";
-        $stmt = $this->db->prepare($query);
+        $query = "DELETE FROM rate_limits WHERE window_start < ?";		
+        $stmt = $this->db->prepare($query);		
         $stmt->execute([$cutoff]);
     }
 }

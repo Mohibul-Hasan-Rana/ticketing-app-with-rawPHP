@@ -3,7 +3,7 @@ class Database {
     private $host = 'localhost';
     private $db_name = 'ticketing_system';
     private $username = 'root';
-    private $password = 'admin';
+    private $password = 'root';
     private $db;
 
     public function getConnection() {
